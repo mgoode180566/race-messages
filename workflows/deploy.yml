@@ -31,7 +31,7 @@ jobs:
             --no-confirm-changeset \
             --no-fail-on-empty-changeset \
             --stack-name race-websocket-stack \
-            --s3-bucket my-deployment-artifacts-bucket \
+            --s3-bucket race-messages-artifacts-bucket \
             --capabilities CAPABILITY_IAM \
             --region ${{ secrets.AWS_REGION }}
         env:
