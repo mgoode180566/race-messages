@@ -25,7 +25,6 @@ public class NotifyClientsHandler implements RequestHandler<SQSEvent, Void> {
 	@Override
 	public Void handleRequest(SQSEvent event, Context context) {
 		var connections = ddb.scan(ScanRequest.builder().tableName("WebSocketConnections").build()).items();
-		
 		for (SQSEvent.SQSMessage record : event.getRecords()) {
 			String messageBody = record.getBody();
 			for (var item : connections) {
